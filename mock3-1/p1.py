@@ -1,3 +1,5 @@
+
+
 def f(word):
     # If the input word is empty, return an empty string
     if not word:

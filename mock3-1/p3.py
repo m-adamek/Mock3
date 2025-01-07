@@ -18,3 +18,19 @@ print(f(["john5", "ann123", "JOHN5", "xxx", "abc333", "a10"]))  # Output: True
 print(f(["abc123", "ann", "abc123", "a10"]))                   # Output: False
 print(f(["bob2", "bob2"]))                                     # Output: False
 print(f(["bob2", "BOB2"]))                                     # Output: True
+
+
+
+# def f(uid):
+#     seen = []  # Use a list to track seen identifiers
+#     for user_id in uid:
+#         if user_id in seen:  # Check if the ID is already in the list
+#             return False
+#         seen.append(user_id)  # Add the ID to the list
+#     return True
+
+# # Examples:
+# print(f(["john5", "ann123", "JOHN5", "xxx", "abc333", "a10"]))  # True
+# print(f(["abc123", "ann", "abc123", "a10"]))                   # False
+# print(f(["bob2", "bob2"]))                                     # False
+# print(f(["bob2", "BOB2"]))                                     # True

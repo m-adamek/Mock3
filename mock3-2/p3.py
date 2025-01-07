@@ -1,12 +1,22 @@
 def f(d):
-    # Calculate the average number of passengers across all flights
-    avg_passengers = sum(d.values()) / len(d)
+    # Obliczanie łącznej liczby pasażerów
+    total_passengers = 0
+    for passengers in d.values():
+        total_passengers += passengers
     
-    # Count how many flights have more passengers than the average
-    count = sum(1 for passengers in d.values() if passengers > avg_passengers)
+    # Obliczanie średniej liczby pasażerów
+    num_flights = len(d)
+    average_passengers = total_passengers / num_flights
     
+    # Licznik lotów, w których liczba pasażerów przekracza średnią
+    count = 0
+    for passengers in d.values():
+        if passengers > average_passengers:
+            count += 1
+    
+    # Zwracanie wyniku
     return count
 
-# Example usage
-print(f({"LO231": 150, "BA787": 120, "NZ15": 30}))  # Output: 2
-print(f({"LO231": 150, "BA787": 20, "NZ15": 30}))   # Output: 1
+# Przykłady:
+print(f({"LO231": 150, "BA787": 120, "NZ15": 30}))  # 2
+print(f({"LO231": 150, "BA787": 20, "NZ15": 30}))   # 1

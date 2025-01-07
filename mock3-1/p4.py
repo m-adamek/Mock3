@@ -1,9 +1,9 @@
 def f(fnc, prods):
-    # Apply the provided function `fnc` to each product in `prods` and generate their IDs
-    product_ids = [fnc(prod) for prod in prods]
-    
+    # Use the map function to apply fnc to each product in prods
+    product_ids = list(map(fnc, prods))
     # Join the resulting IDs with commas and return the string
     return ",".join(product_ids)
+
 
 # Example usage
 prods = ["water", "cheese", "tomato"]
